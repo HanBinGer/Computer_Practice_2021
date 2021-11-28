@@ -213,7 +213,7 @@ double det_gaus(double** M, int size) {
 			}
 			else ++count;
 		}
-		if(!!A[k][k]) return 0;
+		if(!A[k][k]) return 0;
 
 		for (int i = k+1; i < size; ++i) {
 			double n = A[i][k];
