@@ -164,7 +164,7 @@ void write_matrix(const char* fname, double** M, int n, int m) {
 	out_file.close();
 }
 
-//определитель матрицы методом разложения по строке
+//Г®ГЇГ°ГҐГ¤ГҐГ«ГЁГІГҐГ«Гј Г¬Г ГІГ°ГЁГ¶Г» Г¬ГҐГІГ®Г¤Г®Г¬ Г°Г Г§Г«Г®Г¦ГҐГ­ГЁГї ГЇГ® Г±ГІГ°Г®ГЄГҐ
 double det_minor(double** M, int size){
 	if (size == 1)return M[0][0];
 	double sum = 0;
@@ -190,7 +190,7 @@ double det_minor(double** M, int size){
 	return sum;
 }
 
-//определитель матрицы методом гаусса
+//Г®ГЇГ°ГҐГ¤ГҐГ«ГЁГІГҐГ«Гј Г¬Г ГІГ°ГЁГ¶Г» Г¬ГҐГІГ®Г¤Г®Г¬ ГЈГ ГіГ±Г±Г 
 double det_gaus(double** M, int size) {
 	double** A = create_matrix<double>(size, size);
 	for (int i = 0; i < size; ++i) {
@@ -213,6 +213,7 @@ double det_gaus(double** M, int size) {
 			}
 			else ++count;
 		}
+		if(!!A[k][k]) return 0;
 
 		for (int i = k+1; i < size; ++i) {
 			double n = A[i][k];
@@ -221,7 +222,7 @@ double det_gaus(double** M, int size) {
 				A[i][j] = A[i][j] - (A[k][j] / A[k][k]) * n;
 			}
 		}
-		//print_matrix(A, size, size); отладка хода решения:)
+		//print_matrix(A, size, size); Г®ГІГ«Г Г¤ГЄГ  ГµГ®Г¤Г  Г°ГҐГёГҐГ­ГЁГї:)
 		//std::cout << "-----------" << std::endl;
 	}
 	double det = 1;
@@ -232,7 +233,7 @@ double det_gaus(double** M, int size) {
 } 
 
 
-//обратная матрица
+//Г®ГЎГ°Г ГІГ­Г Гї Г¬Г ГІГ°ГЁГ¶Г 
 double** inv(double** M, int size) {
 	double** A = create_matrix<double>(size, size);
 	for (int i = 0; i < size; ++i) {
@@ -270,7 +271,7 @@ double** inv(double** M, int size) {
 				A[i][j] = A[i][j] - (A[k][j] / A[k][k]) * n;
 			}
 		}
-		//print_matrix(A, size, size); отладка хода решения:)
+		//print_matrix(A, size, size); Г®ГІГ«Г Г¤ГЄГ  ГµГ®Г¤Г  Г°ГҐГёГҐГ­ГЁГї:)
 		//std::cout << "-----------" << std::endl;
 	}
 	for (int k = size - 1; k > 0; --k) {
