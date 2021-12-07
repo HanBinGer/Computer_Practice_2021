@@ -26,11 +26,11 @@ double** input_matrix(int& rows, int& columns);
 double** read_matrix(const char* fname, int& n, int& m);
 void write_matrix(const char* fname, double** M, int n, int m);
 
-//определитель матрицы методом гаусса
+//Г®ГЇГ°ГҐГ¤ГҐГ«ГЁГІГҐГ«Гј Г¬Г ГІГ°ГЁГ¶Г» Г¬ГҐГІГ®Г¤Г®Г¬ ГЈГ ГіГ±Г±Г 
 double det_gaus(double** M, int size);
 
-//обратная матрица
+//Г®ГЎГ°Г ГІГ­Г Гї Г¬Г ГІГ°ГЁГ¶Г 
 double** inv(double** M, int size);
 
-//определитель матрицы методом разложения по строке
+//Г®ГЇГ°ГҐГ¤ГҐГ«ГЁГІГҐГ«Гј Г¬Г ГІГ°ГЁГ¶Г» Г¬ГҐГІГ®Г¤Г®Г¬ Г°Г Г§Г«Г®Г¦ГҐГ­ГЁГї ГЇГ® Г±ГІГ°Г®ГЄГҐ
 double det_minor(double** M, int size);
