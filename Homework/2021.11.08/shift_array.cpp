@@ -7,8 +7,9 @@ int main()
 {
 	int N, shift;
 	std::cin >>N>>shift;
-    shift %= N;
-	 int* M = new  int [N];
+	if (shift < 0) shift = N + shift;
+        shift %= N;
+	int* M = new  int [N];
 	for (int i = 0; i < N; ++i) {
 		M[i] = i + 1;
 	}
